@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base :: parent(~{:: #content},~{::title},~{::script})}">
+  <head>
+    <title>contact page</title>
+  </head>
+  <body>
+    <div id="content" class=" dark:text-white">
+      <div class="" th:classappend="${loggedinUser} ? pt-20 : pt-1">
+        <!-- Contact Section -->
+    <section class="py-20 bg-white dark:bg-gray-800 p-4">
+      <div class="container mx-auto text-center">
+          <h1 class="text-5xl font-bold text-indigo-600 dark:text-indigo-400">Contact Us</h1>
+          <p class="mt-6 text-lg text-gray-700 dark:text-gray-300">We would love to hear from you! Feel free to get in touch with any questions or feedback.</p>
+      </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900 p-4">
+      <div class="container mx-auto max-w-lg">
+          <form class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+              <div class="mb-6">
+                  <label for="name" class="block text-lg font-medium text-gray-700 dark:text-gray-300">Name</label>
+                  <input type="text" id="name" class="mt-2 p-3 w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your Name">
+              </div>
+              <div class="mb-6">
+                  <label for="email" class="block text-lg font-medium text-gray-700 dark:text-gray-300">Email</label>
+                  <input type="email" id="email" class="mt-2 p-3 w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your Email">
+              </div>
+              <div class="mb-6">
+                  <label for="message" class="block text-lg font-medium text-gray-700 dark:text-gray-300">Message</label>
+                  <textarea id="message" rows="6" class="mt-2 p-3 w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your Message"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-indigo-600 text-white px-4 py-3 rounded-lg hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400">Send Message</button>
+          </form>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-600 dark:bg-gray-800 text-white py-6">
+      <div class="container mx-auto text-center">
+          <p>&copy; 2024 Smart Contact Manager. All rights reserved.</p>
+      </div>
+  </footer>
+      </div>
+    </div>
+    <script data-th-src="@{/js/temp.js}"></script>
+  </body>
+</html>

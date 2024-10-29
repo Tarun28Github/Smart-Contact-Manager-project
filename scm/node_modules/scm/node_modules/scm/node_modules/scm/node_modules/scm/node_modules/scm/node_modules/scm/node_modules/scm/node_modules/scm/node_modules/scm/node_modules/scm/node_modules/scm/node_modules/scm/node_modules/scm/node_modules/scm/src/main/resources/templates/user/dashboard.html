@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base :: parent(~{:: #content},~{::title},~{::script})}">
+  <head>
+    <title>Dashboard page</title>
+  </head>
+  <body>
+    <div id="content" class=" dark:text-white">
+      <aside data-th-replace="~{user/sidebar::sidebar}"></aside>
+      <div class="text-5xl pt-20 " style="padding-left: 265px;">
+       <!-- Dashboard Section -->
+    <section class="py-16 bg-white dark:bg-gray-800 p-4">
+      <div class="container mx-auto">
+          <div class="flex justify-between items-center">
+              <h1 class="text-4xl font-bold text-indigo-600 dark:text-indigo-400">Welcome, <span data-th-text="${loggedinUser.name}"></span></h1>
+              <button class="bg-amber-500 text-black px-4 py-2 rounded hover:bg-amber-600 dark:hover:bg-amber-400">Add New Contact</button>
+          </div>
+          <p class="mt-4 text-lg text-gray-700 dark:text-gray-300">Here’s an overview of your recent activity and contacts.</p>
+      </div>
+  </section>
+
+  <!-- User Info and Stats -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900 p-4">
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Total Contacts Card -->
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-indigo-500 dark:text-indigo-300">Total Contacts</h3>
+              <p class="mt-4 text-4xl font-bold text-gray-700 dark:text-gray-200">120</p>
+          </div>
+          <!-- Recent Activity Card -->
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-indigo-500 dark:text-indigo-300">Recent Activity</h3>
+              <ul class="mt-4 text-gray-700 dark:text-gray-300">
+                  <li class="mb-2">Added contact: John Doe</li>
+                  <li class="mb-2">Updated contact: Jane Smith</li>
+                  <li class="mb-2">Deleted contact: Michael Johnson</li>
+              </ul>
+          </div>
+          <!-- Latest Contacts Card -->
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg ">
+              <h3 class="text-xl font-bold text-indigo-500 dark:text-indigo-300">Latest Contacts</h3>
+              <ul class="mt-4 text-gray-700 dark:text-gray-300">
+                  <li class="mb-2">John Doe</li>
+                  <li class="mb-2">Jane Smith</li>
+                  <li class="mb-2">Michael Johnson</li>
+              </ul>
+          </div>
+      </div>
+  </section>
+
+  <!-- Manage Contacts Section -->
+  <section class="py-16 bg-white dark:bg-gray-800 p-4">
+      <div class="container mx-auto">
+          <h2 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-8">Manage Your Contacts</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Contact Card Example -->
+              <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                  <h3 class="text-xl font-bold text-gray-900 dark:text-gray-200">John Doe</h3>
+                  <p class="mt-2 text-gray-600 dark:text-gray-400">john.doe@example.com</p>
+                  <p class="mt-2 text-gray-600 dark:text-gray-400">+1 123 456 7890</p>
+                  <div class="mt-4 flex space-x-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 dark:hover:bg-blue-400">Edit</button>
+                      <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 dark:hover:bg-red-400">Delete</button>
+                  </div>
+              </div>
+
+              <!-- More Contact Cards Can Be Added Here -->
+          </div>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-600 dark:bg-gray-800 text-white py-6">
+      <div class="container mx-auto text-center">
+          <p>&copy; 2024 Smart Contact Manager. All rights reserved.</p>
+      </div>
+  </footer>
+      </div>
+    </div>
+    <script data-th-src="@{/js/temp.js}"></script>
+  </body>
+</html>

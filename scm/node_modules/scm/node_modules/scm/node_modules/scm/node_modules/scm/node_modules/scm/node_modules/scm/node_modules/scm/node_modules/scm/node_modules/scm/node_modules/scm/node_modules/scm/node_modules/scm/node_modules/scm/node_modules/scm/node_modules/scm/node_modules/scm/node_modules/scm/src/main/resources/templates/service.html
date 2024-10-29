@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base :: parent(~{:: #content},~{::title},~{::script})}">
+  <head>
+    <title>service page</title>
+  </head>
+  <body>
+    <div id="content" class=" dark:text-white">
+      <div class="" th:classappend="${loggedinUser} ? pt-20 : pt-1">
+          <!-- Main Services Section -->
+    <section class="py-16 bg-white dark:bg-gray-800 p-4">
+      <div class="container mx-auto text-center">
+          <h1 class="text-4xl font-bold text-teal-700 dark:text-teal-400">Our Services</h1>
+          <p class="mt-6 text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+              Smart Contact Manager offers a variety of services tailored to help you manage your contacts efficiently, securely, and effortlessly.
+          </p>
+      </div>
+  </section>
+
+  <!-- Service Details -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900 p-4">
+      <div class="container mx-auto">
+          <h2 class="text-3xl font-bold text-center text-purple-700 dark:text-purple-400 ">Our Core Services</h2>
+          <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+                  <h3 class="text-2xl font-bold text-teal-500 dark:text-teal-300">Contact Management</h3>
+                  <p class="mt-4 text-gray-600 dark:text-gray-400">Easily manage your personal and business contacts. Add, update, and categorize contacts effortlessly.</p>
+              </div>
+              <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+                  <h3 class="text-2xl font-bold text-teal-500 dark:text-teal-300">Secure Cloud Storage</h3>
+                  <p class="mt-4 text-gray-600 dark:text-gray-400">Store your contacts securely in the cloud with end-to-end encryption and privacy protection.</p>
+              </div>
+              <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+                  <h3 class="text-2xl font-bold text-teal-500 dark:text-teal-300">Data Backup & Recovery</h3>
+                  <p class="mt-4 text-gray-600 dark:text-gray-400">Never worry about losing your contacts. Automatic backups and easy recovery options are available.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Additional Services -->
+  <section class="py-16 bg-white dark:bg-gray-800 p-4">
+      <div class="container mx-auto">
+          <h2 class="text-3xl font-bold text-center text-purple-700 dark:text-purple-400">Additional Services</h2>
+          <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-md">
+                  <h3 class="text-xl font-bold text-teal-600 dark:text-teal-400">Analytics & Insights</h3>
+                  <p class="mt-4 text-gray-600 dark:text-gray-400">Gain insights into your contacts with analytics to better manage and understand your network.</p>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-md">
+                  <h3 class="text-xl font-bold text-teal-600 dark:text-teal-400">Multi-Device Sync</h3>
+                  <p class="mt-4 text-gray-600 dark:text-gray-400">Sync your contacts across all devices, ensuring you have access wherever you are.</p>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-md">
+                  <h3 class="text-xl font-bold text-teal-600 dark:text-teal-400">Custom Groups</h3>
+                  <p class="mt-4 text-gray-600 dark:text-gray-400">Organize contacts into custom groups, making it easy to manage large contact lists.</p>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-md">
+                  <h3 class="text-xl font-bold text-teal-600 dark:text-teal-400">Contact Sharing</h3>
+                  <p class="mt-4 text-gray-600 dark:text-gray-400">Easily share contacts with colleagues, friends, or family in a secure manner.</p>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-md">
+                  <h3 class="text-xl font-bold text-teal-600 dark:text-teal-400">Reminders & Alerts</h3>
+                  <p class="mt-4 text-gray-600 dark:text-gray-400">Set reminders for important dates like birthdays or follow-ups.</p>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-md">
+                  <h3 class="text-xl font-bold text-teal-600 dark:text-teal-400">Import/Export Contacts</h3>
+                  <p class="mt-4 text-gray-600 dark:text-gray-400">Seamlessly import or export contacts from other platforms for easy data transfer.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Our Commitment -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900 p-4">
+      <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold text-teal-700 dark:text-teal-400">Our Commitment to You</h2>
+          <p class="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              At Smart Contact Manager, we are dedicated to providing the best contact management services. Our platform is designed with security, ease of use, and accessibility in mind.
+          </p>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-teal-600 dark:bg-gray-800 text-white py-6">
+      <div class="container mx-auto text-center">
+          <p>&copy; 2024 Smart Contact Manager. All rights reserved.</p>
+      </div>
+  </footer>
+      </div>
+    </div>
+    <script data-th-src="@{/js/temp.js}"></script>
+  </body>
+</html>

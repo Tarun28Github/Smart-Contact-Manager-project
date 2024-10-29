@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-th-fragment="parent(content,title,script)"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head class="inline">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" data-th-href="@{/css/output.css}">
+    <link rel="stylesheet" type="text/css" data-th-href="@{/css/mycss.css}">
+    
+  
+  <title data-th-replace="${title}">Document</title>
+  
+
+</head>
+  <body class="dark:bg-gray-700" >
+    <!-- common header -->
+
+    <div th:if="${loggedinUser}">
+      <header data-th-replace="~{user/user_navbar :: user-navbar}"</header>
+    </div>
+
+    <div th:unless="${loggedinUser}">
+      <header data-th-replace="~{navbar :: navbar}"></header>
+    </div>
+
+    
+
+
+    <!-- main content -->
+    <section data-th-replace="${content}"></section>
+    <!-- common footer -->
+
+   
+    <script data-th-src="@{/js/myjs.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+      } else {
+          document.documentElement.classList.remove('dark')
+      }
+  </script>
+  
+  <th:block data-th-replace="${script}"></th:block>
+  </body>
+</html>

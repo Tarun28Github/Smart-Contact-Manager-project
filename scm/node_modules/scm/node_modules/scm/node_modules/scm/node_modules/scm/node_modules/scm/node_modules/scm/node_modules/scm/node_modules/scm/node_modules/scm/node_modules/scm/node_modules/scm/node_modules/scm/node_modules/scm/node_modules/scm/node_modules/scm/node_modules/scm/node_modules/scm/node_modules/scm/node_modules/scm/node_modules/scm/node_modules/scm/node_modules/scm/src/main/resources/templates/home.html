@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base :: parent(~{:: #content},~{::title},~{::script})}">
+  <head>
+    <title>Home page</title>
+  </head>
+  <body>
+    <div id="content" class=" dark:text-white">
+      <div class="" th:classappend="${loggedinUser} ? pt-20 : pt-1">
+     <!-- Hero Section -->
+     <section id="home" class="bg-cover bg-center h-screen dark:bg-gray-700 bg-gray-50" >
+        <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
+            <div class="text-center text-black">
+                <h2 class="text-5xl font-bold">Manage Your Contacts Effortlessly</h2>
+                <p class="mt-4 text-lg">Store and access all your contact details in one place.</p>
+                <a href="/scm/login" class="mt-6 inline-block bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-700">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+     <!-- About Section -->
+     <section id="about" class="py-16 bg-gray-200 p-4 dark:bg-gray-800">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold">About Smart Contact Manager</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-700 dark:text-gray-400">
+                Smart Contact Manager is a simple yet powerful tool to store and manage all your contacts with ease.
+                Organize your personal or business contacts, and access them anytime, anywhere.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white dark:bg-gray-900 p-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold">Features</h2>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-blue-500 dark:bg-gray-800 text-white p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold">Easy to Use</h3>
+                    <p class="mt-4">Manage contacts with an intuitive interface.</p>
+                </div>
+                <div class="bg-blue-500 dark:bg-gray-800 text-white p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold">Secure Storage</h3>
+                    <p class="mt-4">Your contact details are safe and encrypted.</p>
+                </div>
+                <div class="bg-blue-500 dark:bg-gray-800 text-white p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold">Access Anywhere</h3>
+                    <p class="mt-4">Access your contacts from any device, anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="py-16 bg-gray-200 p-4 dark:bg-gray-800">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold">My Contacts</h2>
+            <p class="mt-4 text-lg text-gray-700 dark:text-gray-300">View and manage your contacts below.</p>
+            <div class="contact-list mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Contact details will be displayed here dynamically -->
+                <div class="bg-white p-4 shadow-md rounded-lg dark:bg-gray-900">
+                    <h3 class="text-xl font-bold">John Doe</h3>
+                    <p class="text-gray-600">john.doe@example.com</p>
+                    <p class="text-gray-600">+123 456 7890</p>
+                </div>
+                <div class="bg-white p-4 shadow-md rounded-lg dark:bg-gray-900 ">
+                    <h3 class="text-xl font-bold">Jane Smith</h3>
+                    <p class="text-gray-600">jane.smith@example.com</p>
+                    <p class="text-gray-600">+987 654 3210</p>
+                </div>
+            </div>
+            <button class="mt-8 bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-700">Add New Contact</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Smart Contact Manager. All rights reserved.</p>
+        </div>
+    </footer>
+        
+        
+      </div>
+    </div>
+    <script data-th-src="@{/js/temp.js}"></script>
+  </body>
+</html>

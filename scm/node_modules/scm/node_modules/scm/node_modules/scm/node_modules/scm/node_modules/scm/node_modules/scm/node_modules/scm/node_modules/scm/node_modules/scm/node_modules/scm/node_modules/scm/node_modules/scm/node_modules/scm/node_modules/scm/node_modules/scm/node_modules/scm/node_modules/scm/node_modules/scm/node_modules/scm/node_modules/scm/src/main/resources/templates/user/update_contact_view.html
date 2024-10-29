@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base :: parent(~{:: #content},~{::title},~{::script})}">
+  <head>
+    <title>Update Contact page</title>
+  </head>
+
+  <body>
+    <div id="content" class="p-4 dark:text-white">
+      <aside data-th-replace="~{user/sidebar::sidebar}"></aside>
+
+      <div class="flex justify-center items-center min-h-screen pt-20">
+        <div class="hidden sm:flex w-60"></div>
+        <div
+          class="bg-gradient-to-r from-cyan-500 to-pink-500 rounded-lg p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12"
+        >
+          <div
+            class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div
+              class="pt-8 space-y-4 md:space-y-6 sm:p-8 bg-gray-50 rounded-md dark:bg-gray-900"
+            >
+              <!-- message -->
+              <div data-th-replace="~{message :: messagebox}"></div>
+              <h1
+                class="text-2xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
+              >
+                Update Contact
+              </h1>
+              <div
+                class="p-6 space-y-4 md:space-y-6 sm:p-8 bg-white dark:bg-gray-700 rounded-md"
+              >
+                <form
+                  class="space-y-4 md:space-y-6"
+                  method="post"
+                  data-th-action="@{'/scm/user/contacts/update/'+${contactid}}"
+                  data-th-object="${contactForm}"
+                  enctype="multipart/form-data"
+                  novalidate
+                
+                >
+                  <div>
+                    <label
+                      for="name"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      ><i class="fa-solid fa-user"></i> Contact Name</label
+                    >
+                    <input
+                      type="text"
+                      data-th-field="*{name}"
+                      class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Emelia Erickson"
+                      required=""
+                    />
+                    <p data-th-if="${#fields.hasErrors('name')}"
+                                          data-th-errors="*{name}"
+                                           class="text-red-400 bg-slate-50 p-1 ml-1 rounded-md shadow-sm border border-t-0 border-red-400 dark:border-red-700 dark:text-red-700" >Name is required</p>
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      ><i class="fa-solid fa-envelope"></i>Contact Email</label
+                    >
+                    <input
+                      type="email"
+                      data-th-field="*{email}"
+                      class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="abc@gmail.com"
+                      required=""
+                    />
+                    <p data-th-if="${#fields.hasErrors('email')}"
+                                        data-th-errors="*{email}"
+                                        class="text-red-400 bg-slate-50 p-1 ml-1 rounded-md shadow-sm border border-t-0 border-red-400 dark:border-red-700 dark:text-red-700" >email is required</p>
+                  </div>
+                  <div>
+                    <label
+                      for="phonenumber"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      ><i class="fa-solid fa-phone"></i> Contact number</label
+                    >
+                    <input
+                      type="number"
+                      data-th-field="*{phonenumber}"
+                      class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="+91xxxxxxxxxx"
+                      required=""
+                    />
+                    <p data-th-if="${#fields.hasErrors('phonenumber')}"
+                                        data-th-errors="*{phonenumber}"
+                                        class="text-red-400 bg-slate-50 p-1 ml-1 rounded-md shadow-sm border border-t-0 border-red-400 dark:border-red-700 dark:text-red-700" >phonenumber is required</p>
+                  </div>
+
+                  <div>
+                    <label
+                      for="address"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      ><i class="fa-solid fa-circle-info"></i>Contact
+                      Address</label
+                    >
+                    <textarea
+                      type="text"
+                      data-th-field="*{address}"
+                      class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="About"
+                      required=""
+                    ></textarea>
+                    <p data-th-if="${#fields.hasErrors('address')}"
+                                        data-th-errors="*{address}"
+                                        class="text-red-400 bg-slate-50 p-1 ml-1 rounded-md shadow-sm border border-t-0 border-red-400 dark:border-red-700 dark:text-red-700" >Address is required</p>
+                  </div>
+                  <div>
+                    <label
+                      for="message"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      ><i class="fa-solid fa-circle-info"></i> Discription</label
+                    >
+                    <textarea
+                      data-th-field="*{discription}"
+                      rows="3"
+                      class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Write your thoughts here..."
+                    ></textarea>
+                  </div>
+
+                  <div>
+                    <i class="fa-solid fa-globe text-xl"></i>
+                    <input
+                      type="text"
+                      data-th-field="*{websitelink}"
+                      class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="http://scm.com/"
+                      required=""
+                    />
+                  </div>
+
+                  <div>
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                    <input
+                      type="text"
+                      data-th-field="*{linkedlink}"
+                      class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="http://scm.com/"
+                      required=""
+                    />
+                  </div>
+
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    for="contactImage"
+                    >Upload profile pic</label
+                  >
+                  <input
+                  id="image_file_input"
+                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    data-th-field="*{contactImage}"
+                    type="file"
+                  />
+                  <img class=" mx-auto rounded-lg shadow m-3" style="max-height: 200px;" data-th-src="*{picture}" id="upload_image_preview" alt="">
+
+                  <div class="flex items-center mb-4">
+                    <input
+                      type="checkbox"
+                      data-th-field="*{favorite}"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="favorite"
+                      class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      >add to favorite</label
+                    >
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Update Contact
+                  </button>
+                  <a
+                    type="button"
+                    data-th-href="@{'/scm/user/contacts/view/reset/'+${contactid}}"
+                    class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >Reset</a
+                  >
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script data-th-src="@{/js/admin.js}"></script>
+  </body>
+</html>

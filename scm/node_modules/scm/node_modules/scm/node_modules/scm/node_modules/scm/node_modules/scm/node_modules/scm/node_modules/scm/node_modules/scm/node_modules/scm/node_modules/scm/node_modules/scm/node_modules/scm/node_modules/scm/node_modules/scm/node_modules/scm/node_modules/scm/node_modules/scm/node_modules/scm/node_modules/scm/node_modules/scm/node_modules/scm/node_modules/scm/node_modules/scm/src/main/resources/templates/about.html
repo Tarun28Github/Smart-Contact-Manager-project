@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"  data-th-replace="~{base :: parent(~{:: #content},~{::title},~{::script})}">
+<head>
+ <title>about page</title>   
+</head>
+<body>
+    <div id="content" class=" dark:text-white">
+        <div class="" th:classappend="${loggedinUser} ? pt-20 : pt-1">
+            <section class="p-4 bg-white dark:bg-gray-700 ">
+                <div class="container mx-auto text-center">
+                    <h1 class="text-4xl font-bold text-gray-800 dark:text-white">About Smart Contact Manager</h1>
+                    <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto dark:text-gray-300">
+                        Smart Contact Manager is designed to provide you with a hassle-free way of managing your contacts. Whether you need to organize business contacts, personal connections, or both, our platform ensures you have easy access to all your information whenever you need it.
+                    </p>
+                </div>
+            </section>
+        
+            <!-- Why Choose Us Section -->
+            <section class="p-4 bg-gray-400">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold text-center text-gray-800 p-5 dark:text-white">Why Choose Smart Contact Manager?</h2>
+                    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center dark:bg-gray-800">
+                            <h3 class="text-2xl font-bold text-blue-500 dark:text-blue-900">User-Friendly</h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-400">Our intuitive interface makes it easy for you to manage contacts without any technical skills.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center dark:bg-gray-800">
+                            <h3 class="text-2xl font-bold text-blue-500 dark:text-blue-900">Secure Storage</h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-400">Your contacts are stored securely with encryption, ensuring that your data remains private and safe.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center dark:bg-gray-800">
+                            <h3 class="text-2xl font-bold text-blue-500 dark:text-blue-900">Access Anywhere</h3>
+                            <p class="mt-4 text-gray-600 dark:text-gray-400">Access your contacts on the go, from any device, wherever you are. Stay connected all the time.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Features Overview -->
+            <section class="p-4 bg-white dark:bg-gray-800">
+                <div class="container mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-gray-800 p-5">Key Features</h2>
+                    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-gray-700">Add and Edit Contacts</h3>
+                            <p class="mt-4 text-gray-600">Easily add, update, and delete contacts with a few clicks.</p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-gray-700">Categorize Your Contacts</h3>
+                            <p class="mt-4 text-gray-600">Organize your contacts into categories like work, family, and friends.</p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-gray-700">Search and Filter</h3>
+                            <p class="mt-4 text-gray-600">Quickly find contacts using our built-in search and filtering options.</p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-gray-700">Export Contacts</h3>
+                            <p class="mt-4 text-gray-600">Export your contacts to CSV files for easy backup or sharing.</p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-gray-700">Import Contacts</h3>
+                            <p class="mt-4 text-gray-600">Import existing contacts from other applications seamlessly.</p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-gray-700">Secure Login</h3>
+                            <p class="mt-4 text-gray-600">Protect your account with our secure login system, including password encryption.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Our Mission -->
+            <section class="p-4 bg-gray-200">
+                <div class="container mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-gray-800">Our Mission</h2>
+                    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+                        Our mission is to simplify contact management by offering a reliable and secure solution that caters to everyone from individuals to businesses. We believe that keeping your network organized should be simple, efficient, and available anytime you need it.
+                    </p>
+                </div>
+            </section>
+        
+            <!-- Footer -->
+            <footer class="bg-gray-800 text-white p-4">
+                <div class="container mx-auto text-center">
+                    <p>&copy; 2024 Smart Contact Manager. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script data-th-src="@{/js/temp.js}"></script>
+</body>
+</html>

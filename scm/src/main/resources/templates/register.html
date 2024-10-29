@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base :: parent(~{:: #content},~{::title},~{::script})}">
+
+<head>
+    <title>Signup page</title>
+</head>
+
+<body>
+    <div id="content" class="p-4 dark:text-white">
+        <div class="flex justify-center items-center min-h-screen  ">
+            <div
+                class=" bg-gradient-to-r from-cyan-500 to-pink-500 rounded-lg  p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 ">
+                <div
+                    class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="pt-5 sm:p-6 bg-gray-50 rounded-md dark:bg-gray-900">
+                        <!-- message -->
+                        <div data-th-replace="~{message :: messagebox}"></div>
+                        <h1
+                            class="text-3xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            Register here
+                        </h1>
+                        <div class="mt-8  sm:mx-auto sm:w-full sm:max-w-md">
+                        <div class="p-5  sm:p-8 bg-white dark:bg-gray-700 rounded-md ">
+                            <form class="space-y-6 " method="post" data-th-action="process_form" data-th-object="${userForm}" novalidate>
+                                <div>
+                                    <label for="name"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><i class="fa-solid fa-user"></i> Your full
+                                        name</label>
+                                    <input type="text" name="name" id="name" data-th-field="*{name}"
+                                    class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Emelia Erickson" required="">
+                                        <p data-th-if="${#fields.hasErrors('name')}"
+                                           data-th-errors="*{name}"
+                                           class="text-red-400 bg-slate-50 p-1 ml-1 rounded-md shadow-sm border border-t-0 border-red-400 dark:border-red-700 dark:text-red-700" >Name is required</p>
+                                </div>
+                                <div>
+                                    <label for="email"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><i class="fa-solid fa-envelope"></i> Email</label>
+                                    <input type="email" name="email" id="email" data-th-field="*{email}"
+                                        class="shadow-md bg-slate-50  border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="abc@gmail.com" required="">
+                                        <p data-th-if="${#fields.hasErrors('email')}"
+                                        data-th-errors="*{email}"
+                                        class="text-red-400 bg-slate-50 p-1 ml-1 rounded-md shadow-sm border border-t-0 border-red-400 dark:border-red-700 dark:text-red-700" >email is required</p>
+                                </div>
+                                <div>
+                                    <label for="phonenumber"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><i class="fa-solid fa-phone"></i> Contact number</label>
+                                    <input type="number" name="phonenumber" id="phonenumber" data-th-field="*{phonenumber}"
+                                        class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="+91xxxxxxxxxx" required="">
+                                        <p data-th-if="${#fields.hasErrors('phonenumber')}"
+                                        data-th-errors="*{phonenumber}"
+                                        class="text-red-400 bg-slate-50 p-1 ml-1 rounded-md shadow-sm border border-t-0 border-red-400 dark:border-red-700 dark:text-red-700" >phonenumber is required</p>
+                                </div>
+                                <div>
+                                    <label for="password"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><i class="fa-solid fa-key"></i> Password</label>
+                                    <input type="password" name="password" id="password" placeholder="••••••••" data-th-field="*{password}"
+                                        class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        required="">
+                                        <p data-th-if="${#fields.hasErrors('password')}"
+                                        data-th-errors="*{password}"
+                                        class="text-red-400 bg-slate-50 p-1 ml-1 rounded-md shadow-sm border border-t-0 border-red-400 dark:border-red-700 dark:text-red-700" >password is required</p>
+                                </div>
+                                <div>
+                                    <label for="about"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><i class="fa-solid fa-circle-info"></i> About</label>
+                                    <textarea type="text" name="about" id="about" data-th-field="*{about}"
+                                        class="shadow-md bg-slate-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="About" required=""></textarea>
+                                </div>
+                                <button type="submit"
+                                    class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create
+                                    an account</button>
+                                    <a type="button" data-th-href="@{register}"
+                                    class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Reset</a>
+                                <p class="text-sm font-light text-gray-500 dark:text-gray-400">Already have an account?
+                                    <a class="font-medium text-blue-600 hover:underline dark:text-blue-500"
+                                        href="login">Sign in here</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+    <script data-th-src="@{/js/temp.js}"></script>
+</body>
+
+</html>
